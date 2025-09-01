@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.1)), linear-gradient(rgba(0,0,0,0.3)), url("./images/background.jpg");
+    background-size: cover;
+    background-position: left 80%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* overflow-y: hidden; */
+    backdrop-filter: 8px;
+    color: whitesmoke;
+}
+
+.main-container {
+    position: relative;
+    width: 490px;
+    margin: auto;
+    margin-top: 2em;
+    border: 2px solid white;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding-bottom: 2em;
+}
+
+.header {
+    padding: 1em 2em 0 2em;
+    font-family: "Akaya Telivigala", system-ui;
+    background-color: brown;
+}
+
+.header .header-div {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: 2em;
+}
+
+.header #logo {
+    width: 100px;
+    filter: drop-shadow(-5px -2px 0px white) drop-shadow(5px -2px 0px white);
+}
+
+.header .heading {
+    font-size: 1.4rem;
+}
+
+.header span {
+    font-size: 2.4rem;
+}
+
+main {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: .8em;
+    margin-bottom: 2em;
+}
+
+.emotions-container .emotion-div:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.emotions-container .emotion-div {
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    width: 200px;
+    border: 1px solid whitesmoke;
+    padding: 0.4em;
+}
+
+.emotion-div input {
+    margin-left: auto;
+}
+
+.emotion-div label {
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.emotion-div:hover,
+.emotion-div:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: whitesmoke;
+}
+
+.checked {
+    /* background-color: rgb(165, 42, 42, 0.4); */
+    background-color: whitesmoke;
+    color: brown;
+    accent-color: brown;
+    border-color: brown;
+}
+
+.emotions-container .emotion-div:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.isGif-div {
+    margin-block: 1.4em;
+    font-size: 0.9rem;
+}
+
+#get-gif-btn {
+    background-color: whitesmoke;
+    padding: 0.7em 2em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2 ease;
+}
+
+#get-gif-btn:hover, 
+#get-gif-btn:focus {
+    cursor: pointer;
+}
+
+#get-gif-btn:active {
+    scale: 0.95;
+}
+
+/* GIF STYLING */
+
+#gif-display-main-container {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.gif-container {
+    width: 150px;
+    height: 150px;
+}
+
+.gifs-box{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    /* flex-wrap: wrap; */
+    padding: 2em;
+    gap: 2em;
+    width: 1000px;
+    height: auto;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    /* background-color: aliceblue; */
+}
+
+.gif {
+    border-radius: 8px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.gif:hover,
+.gif:active {
+    outline: 2px solid whitesmoke;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+#close-gif {
+    background-color: whitesmoke;
+    color: brown;
+    padding: 0.5em;
+    padding-top: 1em;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#close-gif:hover,
+#close-gif:focus {
+    background-color: brown;
+}
+
+#close-gif:hover svg {
+    fill: whitesmoke;
+}

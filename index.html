@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparrow's Meme picker</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div class="header-div">
+                <img src="./images/logo.png" 
+                    alt="A logo of Captain Jack Sparrow" loading="lazy"
+                    id="logo"
+                    >
+                <h1 class="heading">Captain's purrfect... <br><span>Meme Picker</span></h1>
+            </div>
+        </header>
+        <main>
+            <section class="main-section">
+                <h2>Select your current emotion</h2>
+                <div id="emotions-container" class="emotions-container">
+                   
+                </div>
+                <div class="isGif-div">
+                    <label for="isGif">Animated GIFs only</label>
+                    <input type="checkbox" id="isGif">
+                </div>
+                <button id="get-gif-btn">Get gif</button>
+            </section>
+        </main>
+    </div>
+    <section id="gif-display">
+        <div id="gif-display-main-container">
+            <span id="close-gif">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </span>
+            <div id="gif-container" class="gifs-box">
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+                <div class="gif-container">
+                    <img src="/images/confused.gif" alt="" class="gif">
+                </div>
+            </div>
+        </div>
+    </section> 
+    <script type="module" src="script.js" defer></script>
+</body>
+</html>
