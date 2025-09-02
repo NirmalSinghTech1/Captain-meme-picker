@@ -24,58 +24,46 @@
             </div>
         </header>
         <main>
-            <section class="main-section">
-                <h2>Select your current emotion</h2>
-                <div id="emotions-container" class="emotions-container">
-                   
+            <section class="main-section" id="main-section">
+                <div>
+                    <h2>Select your current emotion</h2>
+                    <div id="emotions-container" class="emotions-container">
+                       <!-- emotions -->
+                    </div>
                 </div>
-                <div class="isGif-div">
-                    <label for="isGif">Animated GIFs only</label>
-                    <input type="checkbox" id="isGif">
+                <div class="checkbox-btn">
+                    <div class="isGif-div" id="isGif-div">
+                        <label for="isGif">Animated GIFs only</label>
+                        <input type="checkbox" id="isGif">
+                    </div>
+                    <button id="get-gif-btn" class="disabled">Get gif</button>
                 </div>
-                <button id="get-gif-btn">Get gif</button>
             </section>
         </main>
     </div>
     <section id="gif-display">
-        <div id="gif-display-main-container">
-            <span id="close-gif">
+        <div id="gif-display-main-container" class="gif-display-main-container">
+            <span id="close-gif" class="close-gif">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </span>
             <div id="gif-container" class="gifs-box">
-                <div class="gif-container">
+                <!-- <div class="gif-container">
                     <img src="/images/confused.gif" alt="" class="gif">
                 </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
-                <div class="gif-container">
-                    <img src="/images/confused.gif" alt="" class="gif">
-                </div>
+                -->
             </div>
         </div>
     </section> 
+    <section id="gif-small-display">
+        <div class="gif-small-container">
+            <span id="close-small-gif" class="close-gif">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </span>
+            <div class="gif-small-box" id="gif-small-box">
+                <!-- <img src="/images/dominant.gif" alt="" class="gif-small"> -->
+            </div>
+        </div>
+    </section>
     <script type="module" src="script.js" defer></script>
 </body>
 </html>

@@ -12,26 +12,24 @@ body {
     background-position: left 80%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     backdrop-filter: 8px;
     color: whitesmoke;
 }
 
 .main-container {
     position: relative;
-    width: 490px;
-    margin: auto;
-    margin-top: 2em;
-    border: 2px solid white;
+    width: 500px;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
-    padding-bottom: 2em;
 }
 
 .header {
     padding: 1em 2em 0 2em;
     font-family: "Akaya Telivigala", system-ui;
     background-color: brown;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
 .header .header-div {
@@ -61,15 +59,30 @@ main {
 
 .main-section {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    padding-left: 2em;
+    border-right: 2px solid whitesmoke;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid whitesmoke;
+    border-bottom-right-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding-bottom: 2em;
+}
+
+.checkbox-btn {
+    align-self: flex-start;
+    margin-top: 100px;
+}
+
+input[type="checkbox"]:checked{
+    accent-color: brown;
 }
 
 .main-section h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    margin-top: .8em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1.4em;
 }
 
 .emotions-container .emotion-div:first-child{
@@ -81,9 +94,9 @@ main {
     display: flex;
     font-weight: 500;
     justify-content: space-between;
-    width: 200px;
+    width: 220px;
     border: 1px solid whitesmoke;
-    padding: 0.4em;
+    padding: 0.4em 0.6em;
 }
 
 .emotion-div input {
@@ -103,7 +116,6 @@ main {
 }
 
 .checked {
-    /* background-color: rgb(165, 42, 42, 0.4); */
     background-color: whitesmoke;
     color: brown;
     accent-color: brown;
@@ -116,6 +128,9 @@ main {
 }
 
 .isGif-div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     margin-block: 1.4em;
     font-size: 0.9rem;
 }
@@ -131,9 +146,10 @@ main {
     transition: all 0.2 ease;
 }
 
-#get-gif-btn:hover, 
-#get-gif-btn:focus {
-    cursor: pointer;
+
+.disabled:hover {
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 #get-gif-btn:active {
@@ -142,31 +158,34 @@ main {
 
 /* GIF STYLING */
 
-#gif-display-main-container {
+#gif-display {
     display: none;
     position: absolute;
-    left: 50%;
+    left: 28%;
     top: 50%;
     transform: translate(-50%,-50%);
 }
 
-.gif-container {
-    width: 150px;
-    height: 150px;
+#gif-display-main-container {
+    position: relative;
+}
+
+#gif-container img{
+    width: 130px;
+    height: 130px;
 }
 
 .gifs-box{
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(3, 1fr);
     padding: 2em;
-    gap: 2em;
-    width: 1000px;
+    grid-gap: 2em;
+    max-width: 100%;
+    width: auto;
     height: auto;
     border: 3px solid whitesmoke;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    /* background-color: aliceblue; */
 }
 
 .gif {
@@ -175,6 +194,7 @@ main {
     height: 100%;
     width: 100%;
     transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .gif:hover,
@@ -184,21 +204,54 @@ main {
     scale: 1.1;
 }
 
-#close-gif {
+.close-gif {
+    position: absolute;
     background-color: whitesmoke;
+    float: right;
     color: brown;
     padding: 0.5em;
-    padding-top: 1em;
+    top: 0%;
+    left: 101%;
+    transform: translate(-50px, -50px);
     border-radius: 7px;
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
-#close-gif:hover,
-#close-gif:focus {
+.close-gif:hover,
+.close-gif:focus {
     background-color: brown;
 }
 
-#close-gif:hover svg {
+.close-gif:hover svg {
     fill: whitesmoke;
+}
+
+/* Gif small container styling */
+#gif-small-display {
+    display: none;
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 600px;
+}
+
+.gif-small-box {
+    max-width: 500px;
+    min-width: 400px;
+    width: 100%;
+    height: auto;
+    border: 3px solid whitesmoke;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.gif-small-box img {
+    display: block;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
 }

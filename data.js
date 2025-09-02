@@ -127,7 +127,7 @@ export const jackData = [
     },
     {
         emotionTags: ["funny"],
-        isGif: true,
+        isGif: false,
         image: "/funny3.jpeg",
         alt: "A meme"
     }, 
