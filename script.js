@@ -12,6 +12,23 @@ const isGifDiv = document.getElementById('isGif-div')
 const gifSmallDisplay = document.getElementById('gif-small-display')
 const gifSmallBox = document.getElementById('gif-small-box')
 
+// parsing local storage data
+document.addEventListener('DOMContentLoaded', ()=> {
+    const selectedId = JSON.parse(localStorage.getItem("selectedEmotion"))
+    const radios = document.querySelectorAll('input[type=radio]')
+    if(selectedId){
+        for(let radio of radios){
+            if(radio.id === selectedId){
+                radio.checked = true
+                radio.parentElement.classList.add('checked')
+            }
+        }
+        getGifBtn.style.cursor = "pointer"
+        getGifBtn.disabled = false
+    }
+
+})
+
 // get all emotion tags from the jackData
 function getEmotionTags(emotionsData){
     const emotionsArray = []
@@ -59,6 +76,10 @@ renderEmotions(jackData)
 emotionsContainer.addEventListener('change', getSelectedEmotion)
 
 function getSelectedEmotion(){
+// adding selected emotion to local storage
+    const selectedEmotion = document.querySelector('input[type="radio"]:checked').id
+    localStorage.setItem("selectedEmotion", JSON.stringify(selectedEmotion))
+
     const radios = document.getElementsByClassName("emotion")
     for(let radio of radios){
         radio.parentElement.classList.remove("checked")
@@ -107,7 +128,7 @@ function getGif(){
     }
     gifContainer.innerHTML = imageUrl
 
-    if(gifContainer.innerHTML !== ""){
+    if(gifContainer.innerHTML !== "" && localStorage.getItem('selectedEmotion') !== ""){
         gifDisplay.style.display = 'block'
         getGifBtn.style.cursor = "not-allowed"
         getGifBtn.disabled = true

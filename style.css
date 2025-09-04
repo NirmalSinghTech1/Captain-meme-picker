@@ -14,22 +14,31 @@ body {
     background-attachment: fixed;
     overflow-y: hidden;
     backdrop-filter: 8px;
-    color: whitesmoke;
+    color: whitesmoke;  
+    display: flex;
+    align-items: center;
 }
 
 .main-container {
     position: relative;
     width: 500px;
     border-radius: 10px;
+    margin-left: 1em;
+    padding: 0.1em;
+    outline: 1px solid whitesmoke;
+    /* outline-style:dotted; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .header {
     padding: 1em 2em 0 2em;
     font-family: "Akaya Telivigala", system-ui;
     background-color: brown;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 100px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    background-image: linear-gradient(#161616, brown);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .header .header-div {
@@ -57,16 +66,17 @@ main {
     text-align: center;
 }
 
+/* Emotions main section styling */
+
 .main-section {
     display: flex;
     align-items: center;
     padding-left: 2em;
-    border-right: 2px solid whitesmoke;
-    border-top-right-radius: 10px;
-    border-bottom: 2px solid whitesmoke;
-    border-bottom-right-radius: 10px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding-bottom: 2em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .checkbox-btn {
@@ -127,6 +137,8 @@ input[type="checkbox"]:checked{
     border-bottom-right-radius: 5px;
 }
 
+/* checkbox and button styling */
+
 .isGif-div {
     display: flex;
     align-items: center;
@@ -141,22 +153,28 @@ input[type="checkbox"]:checked{
     font-size: 1rem;
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     border: none;
-    transition: all 0.2 ease;
+    transition: all 0.2s ease;
 }
 
-
-.disabled:hover {
-    opacity: 0.8;
-    cursor: not-allowed;
+#get-gif-btn:hover, 
+#get-gif-btn:focus {
+    opacity: 0.9;
 }
 
 #get-gif-btn:active {
     scale: 0.95;
 }
 
-/* GIF STYLING */
+.disabled:hover {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+
+/* GIF Galary Styling */
 
 #gif-display {
     display: none;
@@ -186,6 +204,7 @@ input[type="checkbox"]:checked{
     border: 3px solid whitesmoke;
     border-radius: 10px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .gif {
@@ -227,14 +246,20 @@ input[type="checkbox"]:checked{
     fill: whitesmoke;
 }
 
-/* Gif small container styling */
+.close-gif:active {
+    scale: 0.95;
+}
+
+/* GIF display styling */
+
 #gif-small-display {
     display: none;
     position: absolute;
     left: 75%;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-height: 600px;
+    max-width: 600px;
+    min-width: 400px;
 }
 
 .gif-small-box {
@@ -245,6 +270,7 @@ input[type="checkbox"]:checked{
     border: 3px solid whitesmoke;
     border-radius: 8px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
